@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Kami - MyProperty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --accent-color: #4a4a8a;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navbar (Sama seperti Home) */
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-link {
+            color: #555;
+            font-weight: 500;
+            margin: 0 10px;
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .btn-signup {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 24px;
+            border-radius: 8px;
+        }
+
+        .btn-signup:hover {
+            background-color: #10101d;
+            color: white;
+        }
+
+        /* Page Header */
+        .page-header {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* Service Cards */
+        .service-card {
+            border: 1px solid #eee;
+            border-radius: 16px;
+            padding: 40px 30px;
+            transition: 0.3s;
+            height: 100%;
+            background: white;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            border-color: transparent;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        /* Pricing Section */
+        .pricing-card {
+            border: none;
+            border-radius: 20px;
+            padding: 40px;
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card.popular {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .pricing-card.popular .text-muted {
+            color: #ccc !important;
+        }
+
+        .pricing-card.popular .btn-outline-dark {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .pricing-card ul li i {
+            margin-right: 10px;
+        }
+
+        /* Footer (Sama seperti Home) */
+        footer {
+            background-color: #f9f9f9;
+            padding: 50px 0;
+            margin-top: 80px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-3 border-bottom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-hexagon-fill me-2"></i>MyProperty</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portofolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex d-lg-none mt-3">
+                    <a href="https://wa.me/6281233952259?text=Halo%20MyProperty,%20saya%20ingin%20konsultasi."
+                        target="_blank"
+                        class="btn btn-success rounded-pill w-100 d-flex align-items-center justify-content-center gap-2">
+                        <i class="bi bi-whatsapp"></i> Konsultasi
+                    </a>
+                </div>
+            </div>
+            <a href="https://wa.me/6281233952259?text=Halo%20MyProperty,%20saya%20ingin%20konsultasi." target="_blank"
+                class="btn btn-success rounded-pill px-4 d-none d-lg-flex align-items-center gap-2">
+                <i class="bi bi-whatsapp"></i> Konsultasi
+            </a>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Solusi Lengkap Hunian Anda</h1>
+            <p class="text-muted mt-3" style="max-width: 600px; margin: 0 auto;">
+                Kami menyediakan layanan desain arsitektur, interior, hingga konsultasi properti dengan pendekatan
+                modern minimalis yang fungsional.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card text-center text-md-start">
+                        <div class="service-icon"><i class="bi bi-pencil-square"></i></div>
+                        <h4 class="fw-bold mb-3">Desain Arsitektur</h4>
+                        <p class="text-muted">Perencanaan bangunan dari nol dengan konsep modern minimalis. Kami
+                            memastikan tata ruang efisien, pencahayaan alami maksimal, dan fasad yang estetis.</p>
+                        <a href="#" class="text-decoration-none fw-bold text-dark">Pelajari Lebih Lanjut <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center text-md-start">
+                        <div class="service-icon"><i class="bi bi-lamp"></i></div>
+                        <h4 class="fw-bold mb-3">Desain Interior</h4>
+                        <p class="text-muted">Menciptakan suasana ruang yang nyaman dan *homey*. Pemilihan furnitur,
+                            warna, dan material disesuaikan dengan kepribadian dan kebutuhan keluarga Anda.</p>
+                        <a href="#" class="text-decoration-none fw-bold text-dark">Pelajari Lebih Lanjut <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center text-md-start">
+                        <div class="service-icon"><i class="bi bi-bricks"></i></div>
+                        <h4 class="fw-bold mb-3">Renovasi & Bangun</h4>
+                        <p class="text-muted">Layanan kontraktor terpercaya untuk mewujudkan desain menjadi nyata. Kami
+                            mengawasi kualitas material dan ketepatan waktu pengerjaan.</p>
+                        <a href="#" class="text-decoration-none fw-bold text-dark">Pelajari Lebih Lanjut <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center text-md-start">
+                        <div class="service-icon"><i class="bi bi-graph-up-arrow"></i></div>
+                        <h4 class="fw-bold mb-3">Konsultasi Investasi</h4>
+                        <p class="text-muted">Analisis potensi properti untuk investasi (kost, ruko, kontrakan). Kami
+                            membantu merancang layout yang menguntungkan secara bisnis.</p>
+                        <a href="#" class="text-decoration-none fw-bold text-dark">Pelajari Lebih Lanjut <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center text-md-start">
+                        <div class="service-icon"><i class="bi bi-camera-video"></i></div>
+                        <h4 class="fw-bold mb-3">Visualisasi 3D</h4>
+                        <p class="text-muted">Jasa render 3D realistis untuk keperluan pemasaran properti developer atau
+                            presentasi desain pribadi agar terlihat nyata sebelum dibangun.</p>
+                        <a href="#" class="text-decoration-none fw-bold text-dark">Pelajari Lebih Lanjut <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card text-center text-md-start">
+                        <div class="service-icon"><i class="bi bi-file-earmark-text"></i></div>
+                        <h4 class="fw-bold mb-3">Perizinan (IMB/PBG)</h4>
+                        <p class="text-muted">Bantuan pengurusan dokumen teknis untuk perizinan bangunan. Kami
+                            menyiapkan gambar kerja sesuai standar dinas tata kota setempat.</p>
+                        <a href="#" class="text-decoration-none fw-bold text-dark">Pelajari Lebih Lanjut <i
+                                class="bi bi-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Paket Desain</h2>
+                <p class="text-muted">Pilih paket yang sesuai dengan tahap pembangunan Anda</p>
+            </div>
+
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-4">
+                    <div class="pricing-card">
+                        <h5 class="fw-bold">Konsep Dasar</h5>
+                        <h2 class="fw-bold my-3">Rp 25k<span class="fs-6 text-muted">/m2</span></h2>
+                        <p class="text-muted small mb-4">Cocok untuk Anda yang hanya butuh denah tata ruang.</p>
+                        <ul class="list-unstyled mb-4 small text-muted">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Denah 2D (Layout Plan)</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Tampak Depan 2D</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> 1x Revisi Minor</li>
+                            <li><i class="bi bi-x-circle-fill text-danger"></i> Gambar 3D Render</li>
+                            <li><i class="bi bi-x-circle-fill text-danger"></i> Gambar Kerja Detail</li>
+                        </ul>
+                        <button class="btn btn-outline-dark w-100 rounded-pill">Pilih Paket</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card popular transform-scale-1">
+                        <div class="position-absolute top-0 end-0 bg-warning text-dark px-3 py-1 small fw-bold"
+                            style="border-bottom-left-radius: 10px;">Best Value</div>
+                        <h5 class="fw-bold">Desain Lengkap</h5>
+                        <h2 class="fw-bold my-3">Rp 65k<span class="fs-6 text-white-50">/m2</span></h2>
+                        <p class="small mb-4 opacity-75">Paket komplit untuk pegangan tukang/kontraktor.</p>
+                        <ul class="list-unstyled mb-4 small">
+                            <li><i class="bi bi-check-circle-fill text-warning"></i> Denah & Tampak Lengkap</li>
+                            <li><i class="bi bi-check-circle-fill text-warning"></i> 3D Render Eksterior (3 View)</li>
+                            <li><i class="bi bi-check-circle-fill text-warning"></i> Gambar Kerja Arsitektur</li>
+                            <li><i class="bi bi-check-circle-fill text-warning"></i> Gambar Struktur & ME</li>
+                            <li><i class="bi bi-check-circle-fill text-warning"></i> RAB (Rencana Anggaran)</li>
+                        </ul>
+                        <button class="btn btn-outline-dark w-100 rounded-pill">Pilih Paket</button>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pricing-card">
+                        <h5 class="fw-bold">Interior + Eksterior</h5>
+                        <h2 class="fw-bold my-3">Rp 120k<span class="fs-6 text-muted">/m2</span></h2>
+                        <p class="text-muted small mb-4">Desain menyeluruh hingga detail furniture interior.</p>
+                        <ul class="list-unstyled mb-4 small text-muted">
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Semua fitur Paket Lengkap</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> 3D Render Interior (Setiap Ruang)
+                            </li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Detail Custom Furniture</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Pola Lantai & Plafon</li>
+                            <li><i class="bi bi-check-circle-fill text-success"></i> Konsultasi Material</li>
+                        </ul>
+                        <button class="btn btn-outline-dark w-100 rounded-pill">Pilih Paket</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container" style="max-width: 800px;">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Pertanyaan Umum</h2>
+            </div>
+
+            <div class="accordion accordion-flush" id="accordionFAQ">
+                <div class="accordion-item border rounded mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq1">
+                            Berapa lama proses desain memakan waktu?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body text-muted small">
+                            Untuk rumah tinggal standar type 36-100, proses desain biasanya memakan waktu 2-3 minggu
+                            tergantung kecepatan revisi dan kompleksitas desain.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border rounded mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq2">
+                            Apakah melayani renovasi kecil?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body text-muted small">
+                            Tentu, kami melayani renovasi parsial seperti renovasi dapur, penambahan kamar tidur, atau
+                            *facelift* tampak depan rumah (fasad).
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item border rounded mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq3">
+                            Apakah biaya survei lokasi gratis?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                        <div class="accordion-body text-muted small">
+                            Untuk wilayah dalam kota (misal: Jakarta/Malang/Surabaya sesuai domisili kantor), survei
+                            lokasi gratis jika lanjut ke tahap kontrak desain.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="fw-bold"><i class="bi bi-hexagon-fill me-2"></i>MyProperty.com</h5>
+                    <p class="text-muted small">Partner terbaik untuk desain dan konstruksi rumah modern Anda.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold">Perusahaan</h6>
+                    <ul class="list-unstyled small text-muted">
+                        <li><a href="#" class="text-decoration-none text-muted">Tentang Kami</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Karir</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6 class="fw-bold">Layanan</h6>
+                    <ul class="list-unstyled small text-muted">
+                        <li><a href="#" class="text-decoration-none text-muted">Desain Interior</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Arsitektur</a></li>
+                        <li><a href="#" class="text-decoration-none text-muted">Renovasi</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h6 class="fw-bold">Ikuti Kami</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-dark fs-5"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center text-muted small">
+                &copy; 2025 MyProperty.com. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

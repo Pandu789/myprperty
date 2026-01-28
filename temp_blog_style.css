@@ -1,0 +1,130 @@
+/* Blog Page Styles */
+.blog-header {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.blog-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    height: 100%;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.blog-thumb {
+    height: 220px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.featured-card .blog-thumb {
+    height: 350px;
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.blog-category {
+    background-color: #eef0f7;
+    color: var(--accent-color);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.blog-title a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.blog-title a:hover {
+    color: var(--accent-color);
+}
+
+/* Sidebar Widgets */
+.sidebar-widget {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.widget-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.widget-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+/* Category List */
+.cat-list li {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.cat-list li a {
+    color: #555;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    transition: color 0.2s;
+}
+
+.cat-list li a:hover {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Recent Post */
+.recent-post-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.recent-post-thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Pagination */
+.page-link {
+    color: var(--primary-color);
+}
+
+.page-item.active .page-link {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
