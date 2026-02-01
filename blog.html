@@ -5,15 +5,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog & Inspirasi - MyProperty</title>
+    <meta name="description"
+        content="Temukan tips terbaru seputar arsitektur, interior, dan tren properti di blog MyProperty.">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Blog Page Specific Styles */
+        .blog-card {
+            height: auto !important;
+            margin-bottom: 0;
+        }
+
+        .blog-thumb {
+            height: 220px !important;
+            object-fit: cover;
+        }
+
+        .featured-card .blog-thumb {
+            height: 350px !important;
+        }
+
+        footer {
+            margin-top: 40px !important;
+        }
+
+        .blog-item {
+            display: block;
+        }
+
+        .blog-item.hidden {
+            display: none;
+        }
+
+        .cat-list li a.active {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .cat-list li a.active::before {
+            content: "✓ ";
+        }
+
+        .cta-widget {
+            background: linear-gradient(135deg, #1a1a2e 0%, #4a4a8a 100%);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .cta-widget h5 {
+            color: white;
+            font-weight: 700;
+        }
+
+        .cta-widget p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .cta-widget .btn {
+            width: 100%;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: #ddd;
+            margin-bottom: 15px;
+        }
+    </style>
 </head>
 
 <body>
-
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top py-3 shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="index.html"><i class="bi bi-hexagon-fill me-2"></i>MyProperty</a>
@@ -44,6 +116,7 @@
         </div>
     </nav>
 
+    <!-- Blog Header -->
     <section class="blog-header">
         <div class="container">
             <h1 class="fw-bold display-5">Artikel & Inspirasi Desain</h1>
@@ -51,14 +124,15 @@
         </div>
     </section>
 
+    <!-- Blog Content -->
     <section class="py-5">
         <div class="container">
             <div class="row">
-
+                <!-- Main Content -->
                 <div class="col-lg-8">
-
                     <!-- Featured Post -->
-                    <div class="card blog-card featured-card mb-5">
+                    <div class="card blog-card featured-card mb-4 blog-item" data-category="tren"
+                        data-title="Konsep Rumah Smart Eco-Living Hemat Energi tapi Tetap Mewah">
                         <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
                             class="card-img-top blog-thumb" alt="Featured Post" loading="lazy">
                         <div class="card-body p-4">
@@ -67,25 +141,29 @@
                                 <span class="text-muted ms-3 small"><i class="bi bi-calendar3 me-1"></i> 25 Jan
                                     2025</span>
                             </div>
-                            <h3 class="blog-title fw-bold mb-3"><a href="#">Konsep Rumah "Smart Eco-Living": Hemat
-                                    Energi tapi Tetap Mewah</a></h3>
+                            <h3 class="blog-title fw-bold mb-3">
+                                <a href="blog-detail.html">Konsep Rumah "Smart Eco-Living": Hemat Energi tapi Tetap
+                                    Mewah</a>
+                            </h3>
                             <p class="card-text text-muted">Di tahun 2025, tren hunian tidak hanya soal estetika, tapi
                                 juga efisiensi energi. Temukan bagaimana memadukan panel surya dan sistem smart home
                                 tanpa merusak keindahan fasad rumah Anda.</p>
-                            <a href="#" class="btn btn-outline-dark mt-2">Baca Selengkapnya</a>
+                            <a href="blog-detail.html" class="btn btn-outline-dark mt-2">Baca Selengkapnya</a>
                         </div>
                     </div>
 
                     <!-- Blog Grid -->
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="card blog-card">
+                    <div class="row g-4" id="blogGrid">
+                        <div class="col-md-6 blog-item" data-category="interior"
+                            data-title="5 Tips Memilih Warna Cat untuk Ruang Sempit">
+                            <div class="card blog-card h-100">
                                 <img src="https://images.unsplash.com/photo-1584622050111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                     class="card-img-top blog-thumb" alt="Post 1" loading="lazy">
                                 <div class="card-body p-4">
                                     <span class="blog-category">Interior</span>
-                                    <h5 class="blog-title fw-bold my-2"><a href="#">5 Tips Memilih Warna Cat untuk Ruang
-                                            Sempit</a></h5>
+                                    <h5 class="blog-title fw-bold my-2">
+                                        <a href="blog-detail.html">5 Tips Memilih Warna Cat untuk Ruang Sempit</a>
+                                    </h5>
                                     <span class="blog-date">20 Jan 2025</span>
                                     <p class="card-text small text-muted">Bingung memilih warna? Simak panduan kombinasi
                                         warna yang membuat ruangan terasa 2x lebih luas.</p>
@@ -93,14 +171,16 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="card blog-card">
+                        <div class="col-md-6 blog-item" data-category="material"
+                            data-title="Granit vs Marmer Mana yang Cocok untuk Dapur">
+                            <div class="card blog-card h-100">
                                 <img src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                     class="card-img-top blog-thumb" alt="Post 2" loading="lazy">
                                 <div class="card-body p-4">
                                     <span class="blog-category">Material</span>
-                                    <h5 class="blog-title fw-bold my-2"><a href="#">Granit vs Marmer: Mana yang Cocok
-                                            untuk Dapur?</a></h5>
+                                    <h5 class="blog-title fw-bold my-2">
+                                        <a href="blog-detail.html">Granit vs Marmer: Mana yang Cocok untuk Dapur?</a>
+                                    </h5>
                                     <span class="blog-date">18 Jan 2025</span>
                                     <p class="card-text small text-muted">Perbandingan lengkap dari segi harga,
                                         ketahanan noda, dan perawatan jangka panjang.</p>
@@ -108,14 +188,16 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="card blog-card">
+                        <div class="col-md-6 blog-item" data-category="konstruksi"
+                            data-title="Biaya Bangun Rumah 2 Lantai Type 100 Tahun 2025">
+                            <div class="card blog-card h-100">
                                 <img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                     class="card-img-top blog-thumb" alt="Post 3" loading="lazy">
                                 <div class="card-body p-4">
                                     <span class="blog-category">Konstruksi</span>
-                                    <h5 class="blog-title fw-bold my-2"><a href="#">Biaya Bangun Rumah 2 Lantai Type 100
-                                            Tahun 2025</a></h5>
+                                    <h5 class="blog-title fw-bold my-2">
+                                        <a href="blog-detail.html">Biaya Bangun Rumah 2 Lantai Type 100 Tahun 2025</a>
+                                    </h5>
                                     <span class="blog-date">15 Jan 2025</span>
                                     <p class="card-text small text-muted">Analisis RAB terbaru untuk wilayah Jawa Timur
                                         dan sekitarnya. Jangan sampai over-budget!</p>
@@ -123,54 +205,123 @@
                             </div>
                         </div>
 
-                        <div class="col-md-6">
-                            <div class="card blog-card">
+                        <div class="col-md-6 blog-item" data-category="investasi"
+                            data-title="Desain Kost Eksklusif yang Diminati Gen-Z">
+                            <div class="card blog-card h-100">
                                 <img src="https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
                                     class="card-img-top blog-thumb" alt="Post 4" loading="lazy">
                                 <div class="card-body p-4">
                                     <span class="blog-category">Investasi</span>
-                                    <h5 class="blog-title fw-bold my-2"><a href="#">Desain Kost Eksklusif yang Diminati
-                                            Gen-Z</a></h5>
+                                    <h5 class="blog-title fw-bold my-2">
+                                        <a href="blog-detail.html">Desain Kost Eksklusif yang Diminati Gen-Z</a>
+                                    </h5>
                                     <span class="blog-date">10 Jan 2025</span>
                                     <p class="card-text small text-muted">Fitur wajib yang harus ada di desain kost agar
                                         selalu full-booked.</p>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-md-6 blog-item" data-category="arsitektur"
+                            data-title="Tren Fasad Rumah Minimalis 2025">
+                            <div class="card blog-card h-100">
+                                <img src="https://images.unsplash.com/photo-1600596542815-37a9a5db2816?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top blog-thumb" alt="Post 5" loading="lazy">
+                                <div class="card-body p-4">
+                                    <span class="blog-category">Arsitektur</span>
+                                    <h5 class="blog-title fw-bold my-2">
+                                        <a href="blog-detail.html">Tren Fasad Rumah Minimalis 2025</a>
+                                    </h5>
+                                    <span class="blog-date">05 Jan 2025</span>
+                                    <p class="card-text small text-muted">Eksplorasi material dan tekstur yang sedang
+                                        naik daun untuk eksterior rumah.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 blog-item" data-category="renovasi"
+                            data-title="Renovasi Dapur Bersih dengan Budget 50 Juta">
+                            <div class="card blog-card h-100">
+                                <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top blog-thumb" alt="Post 6" loading="lazy">
+                                <div class="card-body p-4">
+                                    <span class="blog-category">Renovasi</span>
+                                    <h5 class="blog-title fw-bold my-2">
+                                        <a href="blog-detail.html">Renovasi Dapur Bersih dengan Budget 50 Juta</a>
+                                    </h5>
+                                    <span class="blog-date">02 Jan 2025</span>
+                                    <p class="card-text small text-muted">Panduan lengkap untuk mengubah dapur lama
+                                        menjadi modern tanpa menguras kantong.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- No Results Message -->
+                    <div class="no-results" id="noResults" style="display: none;">
+                        <i class="bi bi-search d-block"></i>
+                        <h5>Tidak ada artikel ditemukan</h5>
+                        <p class="text-muted">Coba kata kunci atau kategori lain</p>
+                        <button class="btn btn-outline-dark btn-sm" onclick="resetFilters()">Reset Filter</button>
                     </div>
 
                     <!-- Pagination -->
-                    <nav aria-label="Page navigation" class="mt-5">
+                    <nav aria-label="Page navigation" class="mt-5" id="paginationNav">
                         <ul class="pagination justify-content-center">
-                            <li class="page-item disabled"><a class="page-link" href="#">Prev</a></li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                            <li class="page-item" id="prevBtn"><a class="page-link" href="#"
+                                    onclick="changePage(-1); return false;">Prev</a></li>
+                            <li class="page-item active" data-page="1"><a class="page-link" href="#"
+                                    onclick="goToPage(1); return false;">1</a></li>
+                            <li class="page-item" data-page="2"><a class="page-link" href="#"
+                                    onclick="goToPage(2); return false;">2</a></li>
+                            <li class="page-item" data-page="3"><a class="page-link" href="#"
+                                    onclick="goToPage(3); return false;">3</a></li>
+                            <li class="page-item" id="nextBtn"><a class="page-link" href="#"
+                                    onclick="changePage(1); return false;">Next</a></li>
                         </ul>
                     </nav>
                 </div>
 
+                <!-- Sidebar -->
                 <div class="col-lg-4 ps-lg-5 mt-5 mt-lg-0">
-
                     <!-- Search Widget -->
                     <div class="sidebar-widget">
                         <h5 class="widget-title">Cari Artikel</h5>
-                        <form class="input-group">
-                            <input type="text" class="form-control" placeholder="Ketik kata kunci...">
-                            <button class="btn btn-dark" type="button"><i class="bi bi-search"></i></button>
+                        <form class="input-group" id="searchForm" onsubmit="return false;">
+                            <input type="text" class="form-control" id="searchInput" placeholder="Ketik kata kunci..."
+                                oninput="searchArticles()">
+                            <button class="btn btn-dark" type="button" onclick="searchArticles()"><i
+                                    class="bi bi-search"></i></button>
                         </form>
                     </div>
 
                     <!-- Categories Widget -->
                     <div class="sidebar-widget">
                         <h5 class="widget-title">Kategori</h5>
-                        <ul class="list-unstyled cat-list m-0">
-                            <li><a href="#">Desain Arsitektur <span>(12)</span></a></li>
-                            <li><a href="#">Desain Interior <span>(8)</span></a></li>
-                            <li><a href="#">Tips Renovasi <span>(5)</span></a></li>
-                            <li><a href="#">Material Bangunan <span>(7)</span></a></li>
-                            <li><a href="#">Berita Properti <span>(3)</span></a></li>
+                        <ul class="list-unstyled cat-list m-0" id="categoryList">
+                            <li><a href="#" class="active" data-cat="all"
+                                    onclick="filterByCategory('all'); return false;">Semua Artikel <span
+                                        id="countAll">(7)</span></a></li>
+                            <li><a href="#" data-cat="arsitektur"
+                                    onclick="filterByCategory('arsitektur'); return false;">Desain Arsitektur <span
+                                        id="countArsitektur">(1)</span></a></li>
+                            <li><a href="#" data-cat="interior"
+                                    onclick="filterByCategory('interior'); return false;">Desain Interior <span
+                                        id="countInterior">(1)</span></a></li>
+                            <li><a href="#" data-cat="renovasi"
+                                    onclick="filterByCategory('renovasi'); return false;">Tips Renovasi <span
+                                        id="countRenovasi">(1)</span></a></li>
+                            <li><a href="#" data-cat="material"
+                                    onclick="filterByCategory('material'); return false;">Material Bangunan <span
+                                        id="countMaterial">(1)</span></a></li>
+                            <li><a href="#" data-cat="konstruksi"
+                                    onclick="filterByCategory('konstruksi'); return false;">Konstruksi <span
+                                        id="countKonstruksi">(1)</span></a></li>
+                            <li><a href="#" data-cat="investasi"
+                                    onclick="filterByCategory('investasi'); return false;">Investasi Properti <span
+                                        id="countInvestasi">(1)</span></a></li>
+                            <li><a href="#" data-cat="tren" onclick="filterByCategory('tren'); return false;">Tren 2025
+                                    <span id="countTren">(1)</span></a></li>
                         </ul>
                     </div>
 
@@ -182,8 +333,10 @@
                             <img src="https://images.unsplash.com/photo-1484154218962-a1c002085d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
                                 class="recent-post-thumb" alt="Thumb" loading="lazy">
                             <div>
-                                <h6 class="fw-bold small mb-1"><a href="#" class="text-dark text-decoration-none">7
-                                        Tanaman Indoor Pembersih Udara</a></h6>
+                                <h6 class="fw-bold small mb-1">
+                                    <a href="blog-detail.html" class="text-dark text-decoration-none">7 Tanaman Indoor
+                                        Pembersih Udara</a>
+                                </h6>
                                 <small class="text-muted">12 Jan 2025</small>
                             </div>
                         </div>
@@ -192,8 +345,10 @@
                             <img src="https://images.unsplash.com/photo-1556910103-1c02745a30bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
                                 class="recent-post-thumb" alt="Thumb" loading="lazy">
                             <div>
-                                <h6 class="fw-bold small mb-1"><a href="#" class="text-dark text-decoration-none">Cara
-                                        Mengurus IMB / PBG Online</a></h6>
+                                <h6 class="fw-bold small mb-1">
+                                    <a href="blog-detail.html" class="text-dark text-decoration-none">Cara Mengurus IMB
+                                        / PBG Online</a>
+                                </h6>
                                 <small class="text-muted">05 Jan 2025</small>
                             </div>
                         </div>
@@ -202,26 +357,28 @@
                             <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80"
                                 class="recent-post-thumb" alt="Thumb" loading="lazy">
                             <div>
-                                <h6 class="fw-bold small mb-1"><a href="#"
-                                        class="text-dark text-decoration-none">Inspirasi Kamar Mandi Kering Ala
-                                        Hotel</a></h6>
+                                <h6 class="fw-bold small mb-1">
+                                    <a href="blog-detail.html" class="text-dark text-decoration-none">Inspirasi Kamar
+                                        Mandi Kering Ala Hotel</a>
+                                </h6>
                                 <small class="text-muted">02 Jan 2025</small>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Newsletter Widget -->
-                    <div class="sidebar-widget bg-dark text-white">
-                        <h5 class="fw-bold mb-3">Newsletter</h5>
-                        <p class="small text-white-50">Dapatkan tips desain mingguan langsung ke inbox Anda.</p>
-                        <form>
-                            <input type="email" class="form-control mb-2" placeholder="Email Anda">
-                            <button class="btn btn-primary w-100 btn-sm">Langganan</button>
-                        </form>
+                    <!-- CTA Widget (Replacing Newsletter) -->
+                    <div class="cta-widget">
+                        <h5 class="mb-3"><i class="bi bi-house-heart me-2"></i>Konsultasi Gratis!</h5>
+                        <p class="small mb-4">Punya pertanyaan tentang desain rumah? Tim arsitek kami siap membantu Anda
+                            secara GRATIS.</p>
+                        <a href="https://wa.me/6281233952259?text=Halo%20MyProperty,%20saya%20ingin%20konsultasi%20desain%20rumah."
+                            target="_blank" class="btn btn-success btn-lg rounded-pill">
+                            <i class="bi bi-whatsapp me-2"></i>Chat Sekarang
+                        </a>
+                        <p class="small text-white-50 mt-3 mb-0"><i class="bi bi-clock me-1"></i> Respon cepat dalam 5
+                            menit</p>
                     </div>
-
                 </div>
-
             </div>
         </div>
     </section>
@@ -239,17 +396,17 @@
                 <div class="col-md-2 mb-4">
                     <h6 class="fw-bold mb-3">Perusahaan</h6>
                     <ul class="list-unstyled small text-muted d-flex flex-column gap-2">
-                        <li><a href="#" class="text-decoration-none text-muted">Tentang Kami</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Karir</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Blog</a></li>
+                        <li><a href="About.html" class="text-decoration-none text-muted">Tentang Kami</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-muted">Kontak</a></li>
+                        <li><a href="blog.html" class="text-decoration-none text-muted">Blog</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 mb-4">
                     <h6 class="fw-bold mb-3">Layanan</h6>
                     <ul class="list-unstyled small text-muted d-flex flex-column gap-2">
-                        <li><a href="#" class="text-decoration-none text-muted">Desain Interior</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Arsitektur</a></li>
-                        <li><a href="#" class="text-decoration-none text-muted">Renovasi</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-muted">Desain Interior</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-muted">Arsitektur</a></li>
+                        <li><a href="services.html" class="text-decoration-none text-muted">Renovasi</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -269,7 +426,221 @@
         </div>
     </footer>
 
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6281233952259?text=Halo%20MyProperty,%20saya%20ingin%20konsultasi." target="_blank"
+        class="position-fixed bottom-0 end-0 m-4"
+        style="z-index: 999; width: 60px; height: 60px; background-color: #25D366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); text-decoration: none;">
+        <i class="bi bi-whatsapp"></i>
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Blog Functionality Script -->
+    <script>
+        // Configuration
+        const ITEMS_PER_PAGE = 4;
+        let currentPage = 1;
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // Get all blog items
+        function getAllBlogItems() {
+            return document.querySelectorAll('.blog-item');
+        }
+
+        // Filter articles by category
+        function filterByCategory(category) {
+            currentCategory = category;
+            currentPage = 1;
+
+            // Update active category link
+            document.querySelectorAll('#categoryList a').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.cat === category) {
+                    link.classList.add('active');
+                }
+            });
+
+            applyFilters();
+        }
+
+        // Search articles
+        function searchArticles() {
+            currentSearch = document.getElementById('searchInput').value.toLowerCase().trim();
+            currentPage = 1;
+            applyFilters();
+        }
+
+        // Apply all filters (category + search)
+        function applyFilters() {
+            const items = getAllBlogItems();
+            let visibleCount = 0;
+
+            items.forEach(item => {
+                const itemCategory = item.dataset.category;
+                const itemTitle = item.dataset.title.toLowerCase();
+
+                // Check category match
+                const categoryMatch = currentCategory === 'all' || itemCategory === currentCategory;
+
+                // Check search match
+                const searchMatch = currentSearch === '' || itemTitle.includes(currentSearch);
+
+                if (categoryMatch && searchMatch) {
+                    item.classList.remove('hidden');
+                    item.style.display = '';
+                    visibleCount++;
+                } else {
+                    item.classList.add('hidden');
+                    item.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results message
+            const noResults = document.getElementById('noResults');
+            const paginationNav = document.getElementById('paginationNav');
+
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+                paginationNav.style.display = 'none';
+            } else {
+                noResults.style.display = 'none';
+                paginationNav.style.display = 'block';
+            }
+
+            // Apply pagination
+            applyPagination();
+        }
+
+        // Apply pagination
+        function applyPagination() {
+            const visibleItems = document.querySelectorAll('.blog-item:not(.hidden)');
+            const totalPages = Math.ceil(visibleItems.length / ITEMS_PER_PAGE);
+
+            // Ensure current page is valid
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+
+            // Show/hide items based on page
+            let visibleIndex = 0;
+            visibleItems.forEach(item => {
+                const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+                const endIndex = currentPage * ITEMS_PER_PAGE;
+
+                if (visibleIndex >= startIndex && visibleIndex < endIndex) {
+                    item.style.display = '';
+                } else {
+                    item.style.display = 'none';
+                }
+                visibleIndex++;
+            });
+
+            // Update pagination UI
+            updatePaginationUI(totalPages);
+        }
+
+        // Update pagination buttons
+        function updatePaginationUI(totalPages) {
+            const paginationNav = document.getElementById('paginationNav');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            // Hide pagination if only 1 page or less
+            if (totalPages <= 1) {
+                paginationNav.style.display = 'none';
+                return;
+            }
+            paginationNav.style.display = 'block';
+
+            // Update prev/next buttons
+            prevBtn.classList.toggle('disabled', currentPage === 1);
+            nextBtn.classList.toggle('disabled', currentPage === totalPages);
+
+            // Update page numbers
+            const pageItems = paginationNav.querySelectorAll('[data-page]');
+            pageItems.forEach(item => {
+                const page = parseInt(item.dataset.page);
+                item.style.display = page <= totalPages ? '' : 'none';
+                item.classList.toggle('active', page === currentPage);
+            });
+        }
+
+        // Go to specific page
+        function goToPage(page) {
+            currentPage = page;
+            applyPagination();
+
+            // Scroll to top of blog content
+            document.querySelector('.blog-header').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Change page (prev/next)
+        function changePage(direction) {
+            const visibleItems = document.querySelectorAll('.blog-item:not(.hidden)');
+            const totalPages = Math.ceil(visibleItems.length / ITEMS_PER_PAGE);
+
+            const newPage = currentPage + direction;
+            if (newPage >= 1 && newPage <= totalPages) {
+                goToPage(newPage);
+            }
+        }
+
+        // Reset all filters
+        function resetFilters() {
+            currentCategory = 'all';
+            currentSearch = '';
+            currentPage = 1;
+
+            document.getElementById('searchInput').value = '';
+
+            document.querySelectorAll('#categoryList a').forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.cat === 'all') {
+                    link.classList.add('active');
+                }
+            });
+
+            applyFilters();
+        }
+
+        // Update category counts
+        function updateCategoryCounts() {
+            const items = getAllBlogItems();
+            const counts = {
+                all: items.length,
+                arsitektur: 0,
+                interior: 0,
+                renovasi: 0,
+                material: 0,
+                konstruksi: 0,
+                investasi: 0,
+                tren: 0
+            };
+
+            items.forEach(item => {
+                const cat = item.dataset.category;
+                if (counts[cat] !== undefined) {
+                    counts[cat]++;
+                }
+            });
+
+            // Update UI
+            document.getElementById('countAll').textContent = `(${counts.all})`;
+            if (document.getElementById('countArsitektur')) document.getElementById('countArsitektur').textContent = `(${counts.arsitektur})`;
+            if (document.getElementById('countInterior')) document.getElementById('countInterior').textContent = `(${counts.interior})`;
+            if (document.getElementById('countRenovasi')) document.getElementById('countRenovasi').textContent = `(${counts.renovasi})`;
+            if (document.getElementById('countMaterial')) document.getElementById('countMaterial').textContent = `(${counts.material})`;
+            if (document.getElementById('countKonstruksi')) document.getElementById('countKonstruksi').textContent = `(${counts.konstruksi})`;
+            if (document.getElementById('countInvestasi')) document.getElementById('countInvestasi').textContent = `(${counts.investasi})`;
+            if (document.getElementById('countTren')) document.getElementById('countTren').textContent = `(${counts.tren})`;
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCategoryCounts();
+            applyFilters();
+        });
+    </script>
 </body>
 
 </html>
